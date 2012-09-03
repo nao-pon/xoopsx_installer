@@ -9,6 +9,8 @@ if [ $@ ]; then
 else
 	TRUST="../xoops_trust_path"
 fi
-curl -kL github.com/nao-pon/xoopsx_installer/raw/master/installer.sh|sed "s#<T>#$TRUST#"|sh|sed ':loop; N; $!b loop; s/\n/<br>/g'|cat
+echo "<pre>"
+curl -kL github.com/nao-pon/xoopsx_installer/raw/master/installer.sh|sed "s#<T>#$TRUST#"|sh|cat
+echo "</pre>"
 echo "<br><a href="./install/index.php">Goto your XOOPS installer</a>"
 echo "</body></html>"
